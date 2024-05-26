@@ -1,9 +1,15 @@
-import Image from "next/image";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Dash from "@/components/Dash";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <h1>
-      helio wtld
-    </h1>
+    <>
+      <Dash />
+      <About />
+      <Contact />
+      <Services />
+    </>
   );
 }
