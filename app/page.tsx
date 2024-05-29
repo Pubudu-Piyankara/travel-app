@@ -1,15 +1,16 @@
 import About from "@/components/About";
-import Contact from "@/components/Contact";
 import Dash from "@/components/Dash";
-import Services from "@/components/Services";
+import Destinations from "@/components/Destinations";
+import TravelGuide from "@/components/TravelGuide";
+
 
 export default function Home() {
   return (
     <>
       <Dash />
+      <Destinations />
+      <TravelGuide />
       <About />
-      <Contact />
-      <Services />
     </>
   );
 }
