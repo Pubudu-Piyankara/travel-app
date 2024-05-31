@@ -20,7 +20,7 @@ const Destinations = () => {
             {destinations.map((destination, index) => (
               <CarouselItem
                 key={index}
-                className="relative flex flex-col items-center justify-center w-full h-[500px] p-4 bg-cover bg-center bg-gradient-to-r from-black"
+                className="relative flex flex-col items-center justify-center w-full h-screen lg:h-[500px] p-4 bg-cover bg-center bg-gradient-to-r from-black"
                 style={{ backgroundImage: `url(${destination.imageUrl})` }}
               >
                 <div className="absolute ml-4 inset-0 bg-black bg-opacity-50 flex flex-col items-start justify-center p-4">
@@ -28,7 +28,7 @@ const Destinations = () => {
                     <h3 className="px-2 text-2xl font-semibold text-white">
                       {destination.name}
                     </h3>
-                    <p className="p-2 mt-2 w-1/3 text-justify  text-gray-300">
+                    <p className="p-2 mt-2 w-full text-gray-300 text-justify lg:w-1/3 ">
                       {destination.description}
                     </p>
                     <Button title="Learn More" variant="btn_green" type="button"/>

@@ -9,7 +9,8 @@ export default function Home() {
     <>
       <Dash />
       <Destinations />
-      <TravelGuide />
+      <TravelGuide />`
+      <hr/>
       <Festivals />
     </>
   );

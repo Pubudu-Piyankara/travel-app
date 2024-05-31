@@ -4,8 +4,8 @@ import { MdOutlineFestival } from "react-icons/md";
 
 export const NAVBAR_DATA = [
   { href: "/", key: "Home", label: "Home" },
-  { href: "/", key: "Travel Guide", label: "Travel Guide" },
-  { href: "/", key: "Acitivies", label: "Acitivies" },
+  { href: "/", key: "sigiriya", label: "Destinations" },
+  { href: "/", key: "Notices", label: "Travel Guide" },
   { href: "/", key: "Maps", label: "Maps" },
   { href: "/", key: "Festivals", label: "Festivals" },
 ];
@@ -101,5 +101,23 @@ export const festivals = [
     date: "December 25",
     description:
       "Christmas is celebrated by the Christian community in Sri Lanka with midnight masses, carol singing, and festive gatherings. Streets and homes are decorated with lights and Christmas trees.",
+  },
+];
+
+export const footerLinks = [
+  {
+    title: 'Learn More',
+    links: [
+      'About Hilink',
+      'Press Releases',
+      'Environment',
+      'Jobs',
+      'Privacy Policy',
+      'Contact Us',
+    ],
+  },
+  {
+    title: 'Our Community',
+    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
   },
 ];

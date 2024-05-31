@@ -8,6 +8,7 @@ import { services } from "@/constants";
 const Dash = () => {
   return (
     <section className="max-container padding-container flex flex-col gap-10  md:gap-8 lg:py-10 ">
+      
       <h1 className="flexCenter bold-32">Our Services</h1>
       <section className="flex flex-col gap-4 lg:flex-row lg:gap-20">
       {services.map((service, index) => (
