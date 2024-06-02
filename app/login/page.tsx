@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Link } from "lucide-react";
+import Link from "next/link";
 
 const Login = () => {
   const [user, setUser] = useState({} as LogInUser);
@@ -38,13 +38,7 @@ const Login = () => {
         <button className="border border-gray-400 p-2 m-2 rounded-full">
           Login
         </button>
-        <Link href="/signup">
-          
-            <button className="border border-gray-400 p-2 m-2 rounded-full">
-              Register
-            </button>
-          
-        </Link>
+        <Link href="/signup" className="text-blue-400">Don't you have account?</Link>
       </div>
     </div>
   );
