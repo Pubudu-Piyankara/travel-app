@@ -6,14 +6,15 @@ import Link from "next/link";
 const SignUp = () => {
   const [user, setUser] = useState({} as SignUpUser);
   return (
-    <div className="flex flex-row mb-4 h-screen">
-      <div className="flex w-full h-screen ml-[-500px]">
+    <section className="flex flex-col">
+    <div className="flex flex-row mb-4 h-screen gap-80">
+      <div >
         <Image
-          src="/image/Galle-lighthouse.jpg"
+          src="/image/Aberdeen.jpg"
           alt="logo"
           width={1000}
           height={1000}
-          className=""
+          className="w-auto h-screen"
         />
       </div>
       <div className="flex flex-col justify-center items-center">
@@ -43,12 +44,13 @@ const SignUp = () => {
             className="border border-gray-400 p-2 m-2 rounded-full"
           />
         </form>
-        <button className="border border-gray-400 p-2 m-2 rounded-full">
+        <button className="border border-gray-400 p-2 m-2 rounded-full btn_green">
           Sign Up
         </button>
         <Link href="/login" className="text-blue-400">Already have account</Link>
       </div>
     </div>
+  </section>
   );
 };
 
