@@ -7,7 +7,7 @@ import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
 
 
-const SignUp = () => {
+const SignUpPage = () => {
   const router = useRouter();
   const [user, setUser] = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -92,4 +92,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpPage;

@@ -10,7 +10,7 @@ import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
   return (
-    <div className="relative w-full h- shadow-2xl rounded-md bg-black/50">
+    <div className="relative w-full h- shadow-2xl rounded-md bg-black/50 ">
       
       {/* bg-gradient-to-b from-black/90 via-slate-600 */}
       <nav className="flex justify-between items-center w-full fixed top-0 left-0 right-0 z-50 py-5 bg-gradient-to-b from-black/90 padding-container">
