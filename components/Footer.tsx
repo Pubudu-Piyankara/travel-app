@@ -3,6 +3,7 @@ import	Image from "next/image";
 import logo from "../public/image/logo.jpg";
 import React from "react";
 import { footerLinks } from "@/constants";
+import LogOut from "@/app/logout/page";
 
 const Footer = () => {
   return (
@@ -27,6 +28,7 @@ const Footer = () => {
             ))}
             </div>
         </div>
+        <LogOut/>
       </div>
     </footer>
   );

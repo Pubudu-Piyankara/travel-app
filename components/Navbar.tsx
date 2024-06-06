@@ -3,12 +3,12 @@ import Link from "next/link";
 import logo from "../public/image/logo.jpg";
 import menu from "../public/image/menu.svg";
 import { NAVBAR_DATA } from "../constants";
-import React from "react";
-import Button from "./Button";
+import React, { useEffect } from "react";
 import { GiSriLanka } from "react-icons/gi";
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
+  
   return (
     <div className="relative w-full h- shadow-2xl rounded-md bg-black/50 ">
       
@@ -29,6 +29,7 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
+        {/* want weather user loged or not. if there is not loged user show sign in option otherwise show the logged user detailed */}
         <div className="lg:flexCenter hidden">
           <Link
             href='/login'
