@@ -4,6 +4,7 @@ import logo from "../public/image/logo.jpg";
 import React from "react";
 import { footerLinks } from "@/constants";
 import LogOut from "@/app/logout/page";
+import Profile from "@/app/profile/page";
 
 const Footer = () => {
   return (
@@ -27,6 +28,7 @@ const Footer = () => {
               </FooterColumn>
             ))}
             </div>
+            <Profile/>
         </div>
         <LogOut/>
       </div>
