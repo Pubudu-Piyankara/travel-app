@@ -52,12 +52,8 @@ const Navbar = () => {
         ) : (
           <>
             <div className="lg:flexCenter hidden">
-              <Link
-                href="/login"
-                className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full "
-              >
-                Sign In
-              </Link>
+              mk;fgdk;lkgdfkg;fdkg;lm
+              dfd;l
             </div>
           </>
         )}

@@ -5,25 +5,32 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
-  const isPublicPath = path === '/login' || path === '/signup';
+  const isPublicPath = path === '/login' || path === '/signup' ;
+  const isLandingPath = path === '/landing';
 
   const token = request.cookies.get('token')?.value || '';
 
-  if (isPublicPath && token) {
+  if (isPublicPath  && token) {
+    
     return NextResponse.redirect(new URL('/', request.nextUrl));
   }
+  if (isLandingPath && token) {
+    return NextResponse.redirect(new URL('/', request.nextUrl));
+    
+  }
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL('/landing page', request.nextUrl));
+    return NextResponse.redirect(new URL('/landing', request.nextUrl));
   }
 }
  
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    '/logout',
     '/',
+    '/logout',
     '/login',
     '/signup',
     '/profile',
+    '/landing',
   ],
 }
