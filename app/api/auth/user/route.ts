@@ -6,7 +6,7 @@ import User from "@/models/userModel";
 
 connectDB();
 
-export const gettokenData = (request : NextRequest)=>{
+const gettokenData = (request : NextRequest)=>{
     try {
         const token = request.cookies.get('token')?.value || '';
         const data : any = jwt.verify(token, process.env.TOKEN_SECRET!);
