@@ -20,16 +20,19 @@ import LogOut from "@/app/logout/page";
 import Profile from "@/app/profile/page";
 
 const Navbar = () => {
-  const [userData, setUserData] = useState({} as SignUpUser);
+  const [userData, setUserData] = useState({} as SignUpUser); // default to null to handle conditional rendering
 
   useEffect(() => {
     // Fetch user details from the server
     const fetchUser = async () => {
       try {
         const res = await fetch("/api/auth/user");
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
         const data = await res.json();
         setUserData(data.data);
-        console.log("tijsn data", data);
+        console.log("User data:", data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -38,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="relative w-full h- shadow-2xl rounded-md bg-black/50 ">
+    <div className="relative w-full padding-container shadow-2xl rounded-md bg-black/50 ">
       <nav className="flex justify-between items-center w-full fixed top-0 left-0 right-0 z-50 py-5 bg-gradient-to-b from-black/90 padding-container">
         <Link href="/" className="flex flex-row">
           <GiSriLanka className="text-4xl text-white cursor-pointer" />
@@ -60,11 +63,10 @@ const Navbar = () => {
         {/* Conditional rendering based on user data */}
         {userData ? (
           <div className="text-white lg:flexCenter">
-            <h1></h1>
             <section className="bg-transparent">
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <Image src={defaultPic} alt={"profilePic "} />
+                  <Image src={defaultPic} alt="profilePic" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuLabel className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full">
@@ -73,7 +75,6 @@ const Navbar = () => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Settings</DropdownMenuItem>
-                  
                   <DropdownMenuItem><LogOut/></DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
