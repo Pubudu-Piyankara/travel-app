@@ -21,7 +21,7 @@ const LogOut = () => {
     }
   return (
     <section>
-        <button className='btn_green' onClick={handleLogout}>
+        <button className='btn_red rounded-full' onClick={handleLogout}>
             LogOut
         </button>
     </section>

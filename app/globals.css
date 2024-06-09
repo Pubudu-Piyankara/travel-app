@@ -24,6 +24,9 @@ body {
   .btn_green  { 
     @apply  border-green-50 bg-green-500 px-8 py-2 text-white
   }
+  .btn_red  { 
+    @apply  border-red-50 bg-red-500 px-8 py-2 text-white
+  }
   .btn_gren_thin{
     @apply  border-green-50 bg-green-500 px-8 py-2 text-green-50 font-normal
   }

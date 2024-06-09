@@ -28,9 +28,8 @@ const Footer = () => {
               </FooterColumn>
             ))}
             </div>
-            <Profile/>
+
         </div>
-        <LogOut/>
       </div>
     </footer>
   );

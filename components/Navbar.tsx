@@ -7,6 +7,17 @@ import { NAVBAR_DATA } from "../constants";
 import React, { useEffect, useState } from "react";
 import { GiSriLanka } from "react-icons/gi";
 import { IoMenu } from "react-icons/io5";
+import defaultPic from "../public/image/person-1.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import LogOut from "@/app/logout/page";
+import Profile from "@/app/profile/page";
 
 const Navbar = () => {
   const [userData, setUserData] = useState({} as SignUpUser);
@@ -18,7 +29,7 @@ const Navbar = () => {
         const res = await fetch("/api/auth/user");
         const data = await res.json();
         setUserData(data.data);
-        console.log("tijsn data",data)
+        console.log("tijsn data", data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -33,7 +44,7 @@ const Navbar = () => {
           <GiSriLanka className="text-4xl text-white cursor-pointer" />
           <h1 className="flex text-white justify-center items-center">Eager</h1>
         </Link>
-        
+
         <ul className="hidden h-full gap-12 lg:flex flex-row">
           {NAVBAR_DATA.map((link) => (
             <Link
@@ -45,11 +56,28 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
+        <Profile/>
         {/* Conditional rendering based on user data */}
         {userData ? (
           <div className="text-white lg:flexCenter">
-            <h1 className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full">{userData.name}</h1>
-
+            <h1></h1>
+            <section className="bg-transparent">
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Image src={defaultPic} alt={"profilePic "} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full">
+                    {userData.name}
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                  
+                  <DropdownMenuItem><LogOut/></DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </section>
           </div>
         ) : (
           <div className="text-white lg:flexCenter">
