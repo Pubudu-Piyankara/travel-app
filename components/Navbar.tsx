@@ -66,7 +66,8 @@ const Navbar = () => {
             <section className="bg-transparent">
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <Image src={defaultPic} alt="profilePic" />
+              <Image src={defaultPic} alt="profilePic" />
+                  
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuLabel className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full">
@@ -78,6 +79,7 @@ const Navbar = () => {
                   <DropdownMenuItem><LogOut/></DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+             
             </section>
           </div>
         ) : (
