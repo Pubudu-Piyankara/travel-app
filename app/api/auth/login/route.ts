@@ -33,10 +33,10 @@ export async function POST(req: NextRequest){
         const res = NextResponse.json({ message : "Login success", success:true   }, { status: 200 });
         res.cookies.set("token", token, {
             httpOnly: true,
-            // secure: process.env.NODE_ENV === "production",
-            // sameSite: "strict",
-            // maxAge: 60 * 60 * 24 * 1000,
-            // path: "/",
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            maxAge: 60 * 60 * 24 * 1000,
+            path: "/",
         });
         return res;
             
