@@ -1,4 +1,6 @@
 import React from "react";
+import dynamic from "next/dynamic";
+// const NAVBAR_DATA = dynamic(()=>import("/video/banner_sigiriya.mp4"));
 
 const Welcome = () => {
   return (

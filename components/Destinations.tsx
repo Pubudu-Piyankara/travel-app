@@ -9,6 +9,7 @@ import {
 import { destinations } from "@/constants";
 import Button from "./Button";
 
+
 const Destinations = () => {
   return (
     <section className="max-container padding-container flex flex-col gap-10 md:gap-8 lg:py-10">

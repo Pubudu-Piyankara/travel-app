@@ -21,6 +21,7 @@ import Profile from "@/app/profile/page";
 
 const Navbar = () => {
   const [userData, setUserData] = useState({} as SignUpUser); // default to null to handle conditional rendering
+  const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
     // Fetch user details from the server
@@ -32,6 +33,7 @@ const Navbar = () => {
         }
         const data = await res.json();
         setUserData(data.data);
+        setIsLogged(true);
         console.log("User data:", data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -59,29 +61,33 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
-        <Profile/>
+        <Profile />
         {/* Conditional rendering based on user data */}
-        {userData ? (
-          <div className="text-white lg:flexCenter">
-            <section className="bg-transparent">
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-              <Image src={defaultPic} alt="profilePic" />
-                  
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuLabel className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full">
-                    {userData.name}
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
-                  <DropdownMenuItem><LogOut/></DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-             
-            </section>
-          </div>
+        {isLogged ? (
+          userData ? (
+            <div className="text-white lg:flexCenter">
+              <section className="bg-transparent">
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Image src={defaultPic} alt="profilePic" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuLabel className="border-green-50 bg-green-500 px-8 py-2 text-white rounded-full">
+                      {userData.name}
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Settings</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <LogOut />
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </section>
+            </div>
+          ) : (
+            <div></div>
+          )
         ) : (
           <div className="text-white lg:flexCenter">
             <Link
@@ -92,6 +98,7 @@ const Navbar = () => {
             </Link>
           </div>
         )}
+
         <IoMenu width={50} height={50} className="text-white lg:hidden" />
       </nav>
     </div>
