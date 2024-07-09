@@ -65,7 +65,7 @@ const Navbar = () => {
         {/* Conditional rendering based on user data */}
         {isLogged ? (
           userData ? (
-            <div className="text-white lg:flexCenter">
+            <div>
               <section className="bg-transparent">
                 <DropdownMenu>
                   <DropdownMenuTrigger>
