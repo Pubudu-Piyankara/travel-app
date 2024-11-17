@@ -89,6 +89,9 @@ const Navbar = () => {
             <div></div>
           )
         ) : (
+          <div> </div>
+        )}
+
           <div className="text-white lg:flexCenter">
             <Link
               href="/login"
@@ -97,8 +100,6 @@ const Navbar = () => {
               Sign In
             </Link>
           </div>
-        )}
-
         <IoMenu width={50} height={50} className="text-white lg:hidden" />
       </nav>
     </div>

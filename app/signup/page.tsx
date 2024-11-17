@@ -79,6 +79,7 @@ const SignUpPage = () => {
               type="submit"
               className="border border-gray-400 p-2 m-2 rounded-full btn_green"
               disabled={loading}
+              onClick={signUp}
             >
               {loading ? "Signing Up..." : "Sign Up"}
             </button>
